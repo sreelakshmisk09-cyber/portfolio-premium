@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sreelakshmi S K | Professional Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f5f7fb;
+      --white:#ffffff;
+      --text:#162033;
+      --muted:#5b6780;
+      --primary:#1d4ed8;
+      --primary-soft:#dbeafe;
+      --line:#e6ebf3;
+      --dark:#0f172a;
+      --shadow:0 14px 40px rgba(15, 23, 42, 0.08);
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:'Manrope',sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+
+    .container{
+      width:min(1120px, calc(100% - 32px));
+      margin:auto;
+    }
+
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(245,247,251,0.9);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+      gap:16px;
+    }
+
+    .brand{
+      font-weight:800;
+      font-size:1.05rem;
+      letter-spacing:-0.02em;
+    }
+
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
+    .nav-links a:hover{color:var(--primary)}
+
+    .hero{
+      padding:52px 0 24px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr 0.8fr;
+      gap:26px;
+      align-items:center;
+    }
+
+    .hero-left{
+      background:linear-gradient(135deg,#ffffff,#f7faff);
+      border:1px solid var(--line);
+      border-radius:32px;
+      padding:42px;
+      box-shadow:var(--shadow);
+    }
+
+    .tag{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:999px;
+      background:var(--primary-soft);
+      color:var(--primary);
+      font-size:0.9rem;
+      font-weight:700;
+      margin-bottom:18px;
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(2.3rem,5vw,4.3rem);
+      line-height:1.03;
+      letter-spacing:-0.05em;
+    }
+
+    .lead{
+      margin:18px 0 0;
+      font-size:1.06rem;
+      line-height:1.85;
+      color:var(--muted);
+      max-width:720px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:28px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 22px;
+      border-radius:16px;
+      font-weight:700;
+      transition:0.22s ease;
+    }
+
+    .btn-primary{
+      background:var(--dark);
+      color:#fff;
+    }
+
+    .btn-primary:hover{transform:translateY(-2px)}
+
+    .btn-outline{
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--text);
+    }
+
+    .btn-outline:hover{
+      transform:translateY(-2px);
+      border-color:#cfd8e6;
+    }
+
+    .hero-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      margin-top:22px;
+      color:var(--muted);
+      font-size:0.94rem;
+    }
+
+    .hero-right{
+      background:linear-gradient(180deg,#0f172a,#1e293b);
+      border-radius:32px;
+      padding:28px;
+      color:#fff;
+      box-shadow:var(--shadow);
+    }
+
+    .profile-row{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:20px;
+    }
+
+    .profile-photo{
+      width:86px;
+      height:86px;
+      border-radius:24px;
+      object-fit:cover;
+      border:3px solid rgba(255,255,255,0.08);
+    }
+
+    .mini-title{
+      font-size:0.85rem;
+      text-transform:uppercase;
+      letter-spacing:0.15em;
+      color:#93c5fd;
+      font-weight:700;
+    }
+
+    .mini-role{
+      font-size:1.1rem;
+      font-weight:800;
+      margin-top:6px;
+    }
+
+    .summary-box{
+      display:grid;
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .summary-item{
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:14px 16px;
+      border-radius:18px;
+      color:#dbe7ff;
+      line-height:1.6;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+      margin-top:24px;
+    }
+
+    .stat{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .stat h3{
+      margin:0;
+      font-size:2rem;
+      letter-spacing:-0.03em;
+    }
+
+    .stat p{
+      margin:8px 0 0;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:0.95rem;
+    }
+
+    section{
+      padding:28px 0;
+    }
+
+    .section-head{
+      margin-bottom:16px;
+    }
+
+    .label{
+      font-size:0.8rem;
+      text-transform:uppercase;
+      letter-spacing:0.18em;
+      font-weight:800;
+      color:var(--primary);
+      margin-bottom:10px;
+    }
+
+    .section-head h2{
+      margin:0;
+      font-size:clamp(1.8rem,3vw,2.6rem);
+      letter-spacing:-0.04em;
+    }
+
+    .section-head p{
+      margin:12px 0 0;
+      color:var(--muted);
+      max-width:760px;
+      line-height:1.8;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:26px;
+      box-shadow:var(--shadow);
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-size:1.2rem;
+      letter-spacing:-0.03em;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.8;
+    }
+
+    .badge-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:16px;
+    }
+
+    .badge{
+      padding:8px 12px;
+      border-radius:999px;
+      background:#eff6ff;
+      color:#1d4ed8;
+      font-size:0.82rem;
+      font-weight:700;
+    }
+
+    .skill{
+      margin-bottom:18px;
+    }
+
+    .skill-top{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:10px;
+      font-size:0.96rem;
+      color:#24324d;
+    }
+
+    .bar{
+      height:11px;
+      border-radius:999px;
+      overflow:hidden;
+      background:#e7edf7;
+    }
+
+    .fill{
+      height:100%;
+      border-radius:999px;
+      background:linear-gradient(90deg,#2563eb,#38bdf8);
+    }
+
+    .timeline{
+      display:grid;
+      gap:18px;
+    }
+
+    .timeline-item{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .timeline-top{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-bottom:14px;
+    }
+
+    .timeline-top h3{
+      margin:0;
+      font-size:1.25rem;
+    }
+
+    .company{
+      margin-top:6px;
+      color:var(--primary);
+      font-weight:700;
+    }
+
+    .period{
+      padding:10px 14px;
+      border-radius:999px;
+      background:#f2f6fc;
+      border:1px solid var(--line);
+      color:#344154;
+      font-size:0.9rem;
+      height:fit-content;
+    }
+
+    .points{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+      line-height:1.9;
+    }
+
+    .contact{
+      display:grid;
+      grid-template-columns:0.8fr 1.2fr;
+      gap:22px;
+    }
+
+    .contact-box{
+      display:grid;
+      gap:14px;
+    }
+
+    .contact-item{
+      background:#f8fbff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px 18px;
+      color:#30405f;
+      line-height:1.7;
+    }
+
+    .logo-container{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:30px;
+      margin-top:30px;
+    }
+
+    .logo-card{
+      background:#ffffff;
+      border-radius:20px;
+      padding:30px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      border:1px solid #e6ebf3;
+      box-shadow:0 10px 30px rgba(0,0,0,0.05);
+      transition:0.3s ease;
+      min-height:160px;
+    }
+
+    .logo-card img{
+      max-height:80px;
+      max-width:220px;
+      object-fit:contain;
+      filter:grayscale(100%);
+      opacity:0.8;
+    }
+
+    .logo-card:hover{
+      transform:translateY(-5px);
+    }
+
+    .logo-card:hover img{
+      filter:none;
+      opacity:1;
+    }
+
+    .image-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+      margin-top:20px;
+    }
+
+    .image-grid img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+      border-radius:22px;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      background:#fff;
+    }
+
+    .footer{
+      text-align:center;
+      color:var(--muted);
+      padding:26px 0 42px;
+      font-size:0.92rem;
+    }
+
+    @media (max-width: 980px){
+      .hero-grid,
+      .grid-2,
+      .grid-3,
+      .contact,
+      .stats,
+      .image-grid,
+      .logo-container{
+        grid-template-columns:1fr;
+      }
+
+      .nav-inner{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+
+    @media (max-width: 640px){
+      .container{width:min(100% - 20px, 1120px)}
+      .hero-left,.hero-right,.card,.timeline-item,.stat,.logo-card{padding:20px}
+      .btn{width:100%}
+      .image-grid img{height:auto}
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Sreelakshmi S K</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#organizations">Organizations</a>
+        <a href="#projects">Projects</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <div class="tag">Technology • Product Support • Implementation</div>
+        <h1>Driving technology forward through seamless implementation, intelligent support, and real-world impact.</h1>
+        <p class="lead">
+          Solution-focused Admin cum Product Specialist with strong expertise in implementation,
+          integrations, technical support, user training, and service continuity.
+          I help organizations adopt systems smoothly while translating technical complexity into operational value.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=sreelakshmisk09@gmail.com" target="_blank">Email</a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/sreelakshmi-s-k-6346121b1/" target="_blank">LinkedIn</a>
+          <a class="btn btn-outline" href="Sreelakshmi_CV.pdf" download>Download CV</a>
+        </div>
+
+        <div class="hero-meta">
+          <span>Dubai, UAE</span>
+          <span>+971 564721629</span>
+          <span>sreelakshmisk09@gmail.com</span>
+          <span>English • Hindi • Tamil • Malayalam</span>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="profile-row">
+          <img src="./profile.jpg" alt="Sreelakshmi profile photo" class="profile-photo">
+          <div>
+            <div class="mini-title">Professional Snapshot</div>
+            <div class="mini-role">Admin | Product Specialist | Implementation Support</div>
+          </div>
+        </div>
+
+        <div class="summary-box">
+          <div class="summary-item">Supported onboarding and solution delivery across 220+ client environments.</div>
+          <div class="summary-item">Completed integration support for 150+ implementations using standards-based workflows.</div>
+          <div class="summary-item">Worked across product support, system coordination, training, and go-live assistance.</div>
+          <div class="summary-item">Strong background in troubleshooting, client communication, and post-deployment support.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container stats">
+      <div class="stat">
+        <h3>220+</h3>
+        <p>Client environments supported across onboarding and implementation activities.</p>
+      </div>
+      <div class="stat">
+        <h3>150+</h3>
+        <p>Implementations covered through integration and validation support.</p>
+      </div>
+      <div class="stat">
+        <h3>3 Roles</h3>
+        <p>Progressive experience across product support, enterprise IT, and operations.</p>
+      </div>
+      <div class="stat">
+        <h3>2023</h3>
+        <p>Google Associate Cloud Engineer certification achieved.</p>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container grid-2">
+      <div class="card">
+        <div class="section-head">
+          <div class="label">About</div>
+          <h2>Focused on delivering reliable, scalable, and business-aligned technology solutions.</h2>
+        </div>
+        <p>
+          My profile combines technical support, implementation coordination, product knowledge,
+          workflow management, and customer-facing communication. I work effectively in
+          environments where system adoption, issue resolution, and operational continuity all matter.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="section-head">
+          <div class="label">Strengths</div>
+          <h2>What I bring to a team</h2>
+        </div>
+
+        <div class="skill">
+          <div class="skill-top"><span>Implementation Support</span><span>95%</span></div>
+          <div class="bar"><div class="fill" style="width:95%"></div></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-top"><span>System Integrations</span><span>92%</span></div>
+          <div class="bar"><div class="fill" style="width:92%"></div></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-top"><span>Technical Support</span><span>94%</span></div>
+          <div class="bar"><div class="fill" style="width:94%"></div></div>
+        </div>
+
+        <div class="skill" style="margin-bottom:0">
+          <div class="skill-top"><span>Cloud / Platform Tools</span><span>84%</span></div>
+          <div class="bar"><div class="fill" style="width:84%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="organizations">
+    <div class="container">
+      <div class="section-head">
+        <div class="label">Professional Experience</div>
+        <h2>Organizations I’ve contributed to</h2>
+        <p>Experience across product support, enterprise systems, and implementation-driven environments.</p>
+      </div>
+
+      <div class="logo-container">
+        <div class="logo-card">
+          <img src="logo1.png" alt="Company Logo 1">
+        </div>
+
+        <div class="logo-card">
+          <img src="logo2.png" alt="Company Logo 2">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <div class="label">Project Showcase</div>
+        <h2>Representative work experience</h2>
+        <p>Selected work reflecting implementation experience, integration support, and operational impact across enterprise environments.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Implementation & Deployment Support</h3>
+          <p>
+            Supported onboarding, setup coordination, testing, user training, and post-deployment assistance
+            for client environments adopting business-critical systems.
+          </p>
+          <div class="badge-row">
+            <span class="badge">Implementation</span>
+            <span class="badge">Training</span>
+            <span class="badge">Support</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Integration Workflow Support</h3>
+          <p>
+            Managed mapping, validation, troubleshooting, and go-live support for integration-related
+            workflows using structured standards and secure data exchange processes.
+          </p>
+          <div class="badge-row">
+            <span class="badge">Integration</span>
+            <span class="badge">Validation</span>
+            <span class="badge">Compliance</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Cloud Migration & Centralized Operations</h3>
+          <p>
+            Contributed to cloud migration and centralized data management initiatives to improve reliability,
+            service continuity, and operational scalability for clients.
+          </p>
+          <div class="badge-row">
+            <span class="badge">Cloud</span>
+            <span class="badge">Data</span>
+            <span class="badge">Operations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <div class="label">Gallery</div>
+        <h2>Selected visuals</h2>
+        <p>A visual glimpse into work environments, system interactions, and implementation contexts.</p>
+      </div>
+
+      <div class="image-grid">
+        <img src="work1.jpg" alt="Visual 1">
+        <img src="work2.jpg" alt="Visual 2">
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="section-head">
+        <div class="label">Experience</div>
+        <h2>Career progression</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-top">
+            <div>
+              <h3>Admin cum Product Specialist</h3>
+              <div class="company">Kaizen Star Technologies LLC, Dubai, UAE</div>
+            </div>
+            <div class="period">Nov 2023 – Present</div>
+          </div>
+          <ul class="points">
+            <li>Led technical support coordination to ensure timely issue resolution and uninterrupted client operations.</li>
+            <li>Managed onboarding and integration workflows across clinics, business users, and client environments.</li>
+            <li>Supported technical and operational processes tied to system implementation and data exchange.</li>
+            <li>Handled mapping, testing, validation, and go-live assistance for structured workflows.</li>
+            <li>Delivered onsite implementation, user training, and post-deployment support.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-top">
+            <div>
+              <h3>IT Technical Support Specialist</h3>
+              <div class="company">Tata Consultancy Services, Kerala, India</div>
+            </div>
+            <div class="period">Dec 2021 – Oct 2023</div>
+          </div>
+          <ul class="points">
+            <li>Installed, configured, and supported enterprise applications for stable IT operations.</li>
+            <li>Performed system testing, QA validation, and production support using ServiceNow and Control-M.</li>
+            <li>Monitored workflows, resolved incidents, and supported SLA-focused service delivery.</li>
+            <li>Worked with cross-functional teams on troubleshooting, enhancements, and release activities.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-top">
+            <div>
+              <h3>IT Operator</h3>
+              <div class="company">TIC Technologies and Solutions, Kerala, India</div>
+            </div>
+            <div class="period">Feb 2020 – Nov 2021</div>
+          </div>
+          <ul class="points">
+            <li>Coordinated documentation, verification, and service processing workflows.</li>
+            <li>Assisted users with compliance-related procedures and maintained accurate service records.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container contact" id="contact">
+      <div class="card">
+        <div class="section-head">
+          <div class="label">Education</div>
+          <h2>Academic profile</h2>
+        </div>
+        <div class="contact-box">
+          <div class="contact-item">
+            <strong>Bachelor of Computer Application (BCA)</strong><br>
+            Mahatma Gandhi University, Kerala — 2020
+          </div>
+          <div class="contact-item">
+            <strong>Certification</strong><br>
+            Google Associate Cloud Engineer — 2023
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-head">
+          <div class="label">Contact</div>
+          <h2>Open to strong opportunities in product support, implementation, and technology operations</h2>
+          <p>
+            I’m interested in roles where I can contribute through implementation support,
+            customer enablement, technical problem-solving, and operational excellence.
+          </p>
+        </div>
+
+        <div class="contact-box">
+          <div class="contact-item"><strong>Email:</strong> sreelakshmisk09@gmail.com</div>
+          <div class="contact-item"><strong>Phone:</strong> +971 564721629</div>
+          <div class="contact-item"><strong>Location:</strong> Dubai, UAE</div>
+          <div class="contact-item"><strong>Languages:</strong> English, Hindi, Tamil, Malayalam</div>
+        </div>
+
+        <div class="hero-actions" style="margin-top:20px">
+          <a class="btn btn-primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=sreelakshmisk09@gmail.com" target="_blank">Contact by Email</a>
+          <a class="btn btn-outline" href="Sreelakshmi_CV.pdf" download>Download CV</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container footer">
+    © 2026 Sreelakshmi S K • Professional Portfolio
+  </div>
+
+</body>
+</html>
